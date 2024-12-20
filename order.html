@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="ingredients-panel">
+            <h2>Select Ingredients</h2>
+            <div class="ingredient-card" data-ingredient="tomato">
+                <h3>Tomato</h3>
+                <img src="img/tomato.png" alt="tomato">
+                <div class="counter">
+                    <button class="plus-miness-buttons miness1">-</button>
+                    <button class="plus-miness-buttons plus1">+</button>
+                    <div class="counter-circle"><p class="count1">0</p></div>
+                </div>
+            </div>
+            <div class="ingredient-card" data-ingredient="cheese">
+                <h3>Cheese</h3>
+                <img src="img/cheese.png" alt="Cheese">
+                <div class="counter">
+                    <button class="plus-miness-buttons miness1">-</button>
+                    <button class="plus-miness-buttons plus1">+</button>
+                    <div class="counter-circle"><p class="count1">0</p></div>
+                </div>
+            </div>
+            <div class="ingredient-card" data-ingredient="lettuce">
+                <h3>Lettuce</h3>
+                <img src="img/lettuce.png" alt="Lettuce">
+                <div class="counter">
+                    <button class="plus-miness-buttons miness1">-</button>
+                    <button class="plus-miness-buttons plus1">+</button>
+                    <div class="counter-circle"><p class="count1">0</p></div>
+                </div>
+            </div>
+            <div class="ingredient-card" data-ingredient="onion">
+                <h3>Onion</h3>
+                <img src="img/onion.png" alt="Onion">
+                <div class="counter">
+                    <button class="plus-miness-buttons miness1">-</button>
+                    <button class="plus-miness-buttons plus1">+</button>
+                    <div class="counter-circle"><p class="count1">0</p></div>
+                </div>
+            </div>
+            <div class="ingredient-card" data-ingredient="meat">
+                <h3>Meat</h3>
+                <img src="img/meat.png" alt="Meat">
+                <div class="counter">
+                    <button class="plus-miness-buttons miness1">-</button>
+                    <button class="plus-miness-buttons plus1">+</button>
+                    <div class="counter-circle"><p class="count1">0</p></div>
+                </div>
+            </div>    
+        </aside>  
+             
+        <main class="burger-display">
+            <div class="burger-preview">
+                <div class="burger-stack" id="burger-stack"></div>
+                <div id="price-display">Total: $0.00</div>
+            </div>
+            <div class="btn-container">
+                <button class="ingredient-btn" id="reset-btn">Reset Burger</button>
+                <button class="ingredient-btn" id="finish-btn">Finish Burger</button>
+            </div>
+            <div class="burger">
+                <div class="top-bun"></div>
+                <div class="bottom-bun"></div>
+                <div class="plate"></div>
+            </div>
+            <div id="final-screen">
+                <button id="return-btn">Return to Builder</button>
+                <div class="floating-burger-container"></div>
+                    <div class="floating-burger" id="final-burger"></div>  
+                </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
