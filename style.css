@@ -1,6 +1,6 @@
-/* Reset and Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
 :root {
-    /* Color palette */
     --primary-color: #a34fc4;
     --primary-dark: #8a3dad;
     --primary-light: #b76dd3;
@@ -9,35 +9,33 @@
     --error-color: #ff7675;
     --success-color: #55efc4;
     
-    /* Spacing */
+    --font-primary: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     
-    /* Shadows */
     --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     --elevation-1: 0 2px 4px rgba(0, 0, 0, 0.1);
     --elevation-2: 0 4px 8px rgba(0, 0, 0, 0.12);
     
-    /* Border Radius */
     --radius-sm: 8px;
     --radius-md: 15px;
     --radius-lg: 20px;
     --radius-full: 9999px;
 }
 
-/* Modern CSS Reset */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-primary);
 }
 
-/* Improved Typography */
 body {
-    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-primary);
     background: linear-gradient(135deg, var(--background-color) 0%, #e4e9f2 100%);
     color: var(--text-color);
     min-height: 100vh;
@@ -46,7 +44,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container Layout */
 .container {
     display: grid;
     grid-template-columns: 350px 1fr;
@@ -57,7 +54,6 @@ body {
     min-height: 100vh;
 }
 
-/* Enhanced Ingredients Panel */
 .ingredients-panel {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: var(--elevation-2);
@@ -78,7 +74,6 @@ body {
     border-radius: var(--radius-full);
 }
 
-/* Improved Card Styles */
 .ingredient-card {
     background: white;
     border-radius: var(--radius-md);
@@ -102,6 +97,17 @@ body {
     transition: transform 0.3s ease;
 }
 
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: #f0f2f5;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-full);
+    margin-top: var(--spacing-md);
+}
+
 .plus-minus-buttons {
     width: 35px;
     height: 35px;
@@ -123,7 +129,6 @@ body {
     transform: scale(0.95);
 }
 
-/* Burger Display Improvements */
 .burger-display {
     display: flex;
     flex-direction: column;
@@ -135,7 +140,6 @@ body {
     box-shadow: var(--elevation-1);
 }
 
-/* Enhanced Button Styles */
 .ingredient-btn {
     padding: var(--spacing-md) var(--spacing-xl);
     font-size: 1rem;
@@ -167,7 +171,6 @@ body {
     transform: translate(-50%, -50%) scale(1.5);
 }
 
-/* Improved Media Queries */
 @media screen and (max-width: 1200px) {
     .container {
         grid-template-columns: 300px 1fr;
@@ -228,7 +231,6 @@ body {
     }
 }
 
-/* Animations */
 @keyframes float {
     0%, 100% { 
         transform: translateY(0); 
@@ -242,7 +244,26 @@ body {
     animation: float 3s ease-in-out infinite;
 }
 
-/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -353,7 +374,6 @@ body {
 }
 .ingredient-btn {
     padding: 10px;
-    /* background-color: #4CAF50; */
     background-color: #a34fc4;
     color: white;
     border: none;
@@ -364,11 +384,9 @@ body {
     transition: background-color 0.3s;
 }
 .ingredient-btn:hover {
-    /* background-color: #45a049; */
     background-color: black;
 }
 
-/* Burger Display */
 .burger-display {
     flex: 1;
     display: flex;
@@ -468,7 +486,6 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* background-color: #f0e6d2; */
     background-color: #F8EDED;
     justify-content: center;
     align-items: center;
@@ -476,7 +493,7 @@ body {
 }
 #price-display{
     font-size: 1.5rem;
-    color: #333;
+    color: #656565;
     margin-bottom: 10px;
     font-weight: bold;
 }

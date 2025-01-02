@@ -1,4 +1,5 @@
- /* Reset and Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
  * {
     margin: 0;
     padding: 0;
@@ -6,22 +7,24 @@
 }
 
 :root {
+    --font-primary: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
     --primary-color: #9c0e38;
     --secondary-color: #a34fc4;
     --background-color: #fff9d9;
     --text-color: #333;
     --transition: all 0.3s ease;
+
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Cairo';font-size: 22px;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
     min-height: 100vh;
 }
 
-/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -78,7 +81,6 @@ nav ul li a:hover::after {
 }
 
 
-/* Hero Section */
 .hero {
     display: flex;
     justify-content: space-between;
@@ -145,10 +147,8 @@ nav ul li a:hover::after {
 
 .hero-image img:hover {
     transform: translateY(-10px);
-    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive Design */
 @media (max-width: 968px) {
     .hero {
         flex-direction: column;

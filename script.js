@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Constants for height management
     const MAX_BURGER_HEIGHT = 360; // Maximum height in pixels
     const INGREDIENT_HEIGHTS = {
         tomato: 15,
@@ -9,10 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
         meat: 25
     };
 
-    // Track current burger height
     let currentBurgerHeight = 0;
 
-    // Get DOM elements
     const ingredients = document.querySelectorAll(".ingredient-card");
     const priceDisplay = document.getElementById("price-display");
     const burgerContainer = document.querySelector(".burger");
@@ -21,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const returnButton = document.getElementById("return-btn");
     const finalScreen = document.getElementById("final-screen");
 
-    // Pricing map
     const ingredientPrices = {
         tomato: 0.5,
         cheese: 1.0,
@@ -32,18 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let totalPrice = 0;
 
-    // Update price display
     function updatePrice() {
         priceDisplay.textContent = `Total: $${totalPrice.toFixed(2)}`;
     }
 
-    // Check if adding an ingredient would exceed max height
     function canAddIngredient(ingredientName) {
         const newHeight = currentBurgerHeight + INGREDIENT_HEIGHTS[ingredientName];
         return newHeight <= MAX_BURGER_HEIGHT;
     }
 
-    // Update button states based on available height
     function updateButtonStates() {
         ingredients.forEach(ingredient => {
             const plusButton = ingredient.querySelector(".plus1");
@@ -59,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Add ingredient layer
     function addBurgerLayer(ingredientName) {
         const layer = document.createElement("div");
         layer.className = `ingredient ${ingredientName}`;
@@ -69,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateButtonStates();
     }
 
-    // Remove ingredient layer
     function removeBurgerLayer(ingredientName) {
         const layers = burgerContainer.querySelectorAll(`[data-ingredient='${ingredientName}']`);
         if (layers.length > 0) {
@@ -79,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Initialize event listeners for each ingredient
     ingredients.forEach(ingredient => {
         const plusButton = ingredient.querySelector(".plus1");
         const minusButton = ingredient.querySelector(".miness1");
@@ -109,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Reset functionality
     resetButton.addEventListener("click", () => {
         burgerContainer.querySelectorAll(".ingredient").forEach(layer => layer.remove());
         currentBurgerHeight = 0;
@@ -119,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateButtonStates();
     });
 
-    // Star rating system
     const starsContainer = document.createElement("div");
     starsContainer.className = "stars-container";
     const ratingLabel = document.createElement("p");
@@ -164,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Finish button functionality
     finishButton.addEventListener("click", () => {
         const finalBurger = document.getElementById("final-burger");
         finalBurger.innerHTML = burgerContainer.innerHTML;
@@ -173,11 +160,9 @@ document.addEventListener("DOMContentLoaded", function () {
         updateStars();
     });
 
-    // Return button functionality
     returnButton.addEventListener("click", () => {
         finalScreen.style.display = "none";
     });
 
-    // Initial button state update
     updateButtonStates();
 });
